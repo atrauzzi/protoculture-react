@@ -1,0 +1,43 @@
+{
+  "name": "protoculture-react",
+  "author": "Alexander Trauzzi <atrauzzi@gmail.com>",
+  "version": "0.0.0-development",
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atrauzzi/protoculture-react.git"
+  },
+  "keywords": [
+    "typescript",
+    "dependency-injection",
+    "inversify",
+    "react",
+    "protoculture"
+  ],
+  "bugs": {
+    "url": "https://github.com/atrauzzi/protoculture-react/issues"
+  },
+  "homepage": "https://github.com/atrauzzi/protoculture-react#readme",
+  "devDependencies": {
+    "protoculture-hapi": "^1.0.2",
+    "semantic-release": "^6.3.2",
+    "webpack": "^2.5.0"
+  },
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "dependencies": {
+    "@types/moment": "^2.13.0",
+    "@types/react": "^15.0.23",
+    "@types/react-dom": "^15.5.0",
+    "@types/react-redux": "^4.4.40",
+    "moment": "^2.18.1",
+    "protoculture": "^2.0.26",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4"
+  }
+}

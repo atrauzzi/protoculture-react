@@ -1,0 +1,6 @@
+*.log
+.idea/
+node_modules
+/lib
+/demo/server/public/lib
+/demo/webapp/lib
