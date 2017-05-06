@@ -4,12 +4,17 @@ import { interfaces } from "inversify";
 import { appSymbols, reduxSymbols, ServiceProvider, StaticApp } from "protoculture";
 import { ReactAppConfiguration } from "./ReactAppConfiguration";
 import { ReactApp } from "./ReactApp";
-import { Store } from "redux";
+import { compose, Store } from "redux";
 
+
+declare const window: any;
 
 export class ReactServiceProvider extends ServiceProvider {
 
     public async boot() {
+
+        this.suite.container.rebind(reduxSymbols.Compose)
+            .toConstantValue(window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose);
 
         // this.makeInjectable(ReactApp);
         // this.bindConstructorParameter(reduxSymbols.Store, ReactApp, 0);

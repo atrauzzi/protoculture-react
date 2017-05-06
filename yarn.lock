@@ -48,8 +48,8 @@
     "@types/hapi" "*"
 
 "@types/lodash@^4.14.61":
-  version "4.14.63"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.63.tgz#5ac475f55bfdc62bc88c4239dbc482f2f3bead93"
+  version "4.14.64"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.64.tgz#979cf3a3d4a368670840bf9b3e448dc33ffe84ee"
 
 "@types/moment@^2.13.0":
   version "2.13.0"
@@ -976,7 +976,7 @@ gauge@~1.2.0:
     lodash.padend "^4.1.0"
     lodash.padstart "^4.1.0"
 
-gauge@~2.7.1:
+gauge@~2.7.3:
   version "2.7.4"
   resolved "https://registry.yarnpkg.com/gauge/-/gauge-2.7.4.tgz#2c03405c7538c39d7eb37b317022e325fb018bf7"
   dependencies:
@@ -1876,12 +1876,12 @@ npmconf@^2.1.2:
     uid-number "0.0.5"
 
 "npmlog@2 || ^3.1.0 || ^4.0.0", npmlog@^4.0.0, npmlog@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/npmlog/-/npmlog-4.0.2.tgz#d03950e0e78ce1527ba26d2a7592e9348ac3e75f"
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/npmlog/-/npmlog-4.1.0.tgz#dc59bee85f64f00ed424efb2af0783df25d1c0b5"
   dependencies:
     are-we-there-yet "~1.1.2"
     console-control-strings "~1.1.0"
-    gauge "~2.7.1"
+    gauge "~2.7.3"
     set-blocking "~2.0.0"
 
 npmlog@^1.2.1:
@@ -2101,8 +2101,8 @@ protoculture-hapi@^1.0.2:
     protoculture "^2.0.25"
 
 protoculture@^2.0.25, protoculture@^2.0.26:
-  version "2.0.30"
-  resolved "https://registry.yarnpkg.com/protoculture/-/protoculture-2.0.30.tgz#dd90e08aafe61d05b8a786d0ba5b79bcc3777b5b"
+  version "2.0.31"
+  resolved "https://registry.yarnpkg.com/protoculture/-/protoculture-2.0.31.tgz#6963689873482e48f2f9061f71c4cfa8c76c6240"
   dependencies:
     "@types/lodash" "^4.14.61"
     "@types/node" "^7.0.12"
