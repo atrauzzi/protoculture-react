@@ -25,7 +25,6 @@ export class ReactApp implements App {
 
     public suite: Suite;
     
-    // ToDo: When binding a react app, choose a specific injection for `domRoot` and `component`!  Tada!
     public constructor(
         protected store: Store<any>,
         protected configuration: ReactAppConfiguration<any>,
