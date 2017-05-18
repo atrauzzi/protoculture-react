@@ -14,7 +14,7 @@ const reactDemoServerSymbols = {
 
 export class HelloController {
     
-    public async sayHello(request: Hapi.Request, reply: Hapi.IReply, route: Route) {
+    public async sayHello(request: Hapi.Request, reply: Hapi.Base_Reply, route: Route) {
 
         reply("Yes sir I like it!");
     }
