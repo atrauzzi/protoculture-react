@@ -1,4 +1,5 @@
 import * as React from "react";
+import "../../src/Extensions";
 import { ReactServiceProvider, ReactAppConfiguration } from "../../src/index";
 import { ServiceProvider, StaticServiceProvider, BaseApp, Suite, WebServiceProvider } from "protoculture";
 import * as Hapi from "hapi";
@@ -43,10 +44,10 @@ class ReactDemoComponent extends React.Component<any, any> {
     }
 }
 
-class ReactDemoWebAppServiceProvider extends ReactServiceProvider {
+class ReactDemoWebAppServiceProvider extends ServiceProvider {
 
     public async boot() {
-
+        
         this.bindReactApp({
             id: "demo",
             component: ReactDemoComponent,
@@ -65,6 +66,7 @@ class ReactDemoWebAppSuite extends Suite {
     protected get serviceProviders(): StaticServiceProvider<any>[] {
 
         return [
+            ReactServiceProvider,
             ReactDemoWebAppServiceProvider,
             WebServiceProvider,
         ];
