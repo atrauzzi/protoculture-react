@@ -24,7 +24,7 @@
   "homepage": "https://github.com/atrauzzi/protoculture-react#readme",
   "devDependencies": {
     "protoculture-hapi": "^1.0.2",
-    "semantic-release": "^6.3.2",
+    "semantic-release": "^6.3.6",
     "webpack": "^2.5.0"
   },
   "main": "./lib/index.js",
