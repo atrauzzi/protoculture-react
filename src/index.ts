@@ -1,3 +1,6 @@
+import "./Extensions";
+
+
 export { ReactServiceProvider } from "./ReactServiceProvider";
 export { ReactAppConfiguration } from "./ReactAppConfiguration";
 

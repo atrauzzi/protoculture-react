@@ -1,7 +1,7 @@
 #!/usr/bin/env ts-node
+import * as Hapi from "hapi";
 import { ServiceProvider, StaticServiceProvider, BaseApp, Suite, ConsoleServiceProvider } from "protoculture";
 import { InertServiceProvider, HapiServiceProvider, Route, RouteType } from "protoculture-hapi";
-import * as Hapi from "hapi";
 
 
 //
@@ -10,7 +10,7 @@ import * as Hapi from "hapi";
 
 const reactDemoServerSymbols = {
     HelloController: Symbol("hello"),
-}
+};
 
 export class HelloController {
     
@@ -20,19 +20,22 @@ export class HelloController {
     }
 }
 
-class ReactDemoServerServiceProvider extends HapiServiceProvider {
+class ReactDemoServerServiceProvider extends ServiceProvider {
 
     public async boot() {
 
-        this.bindConnection({
-            host: "0.0.0.0",
-            port: 2112,
+        this.configureConnection(() => { 
+
+            return {
+                host: "0.0.0.0",
+                port: 2112,
+            };
         });
 
         this.makeInjectable(HelloController);
         this.bindConstructor(reactDemoServerSymbols.HelloController, HelloController);
 
-        this.bindRoutes([
+        this.configureRoutes([
             {
                 directory: "./demo/server/public",
             },
@@ -41,8 +44,6 @@ class ReactDemoServerServiceProvider extends HapiServiceProvider {
                 file: "./protoculture.png",
             },
         ]);
-
-        super.boot();
     }
 }
 
@@ -53,6 +54,7 @@ class HapiDemoSuite extends Suite {
     protected get serviceProviders(): StaticServiceProvider<any>[] {
 
         return [
+            HapiServiceProvider,
             InertServiceProvider,
             ReactDemoServerServiceProvider,
             ConsoleServiceProvider,

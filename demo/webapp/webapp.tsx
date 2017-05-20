@@ -1,5 +1,4 @@
 import * as React from "react";
-import "../../src/Extensions";
 import { ReactServiceProvider, ReactAppConfiguration } from "../../src/index";
 import { ServiceProvider, StaticServiceProvider, BaseApp, Suite, WebServiceProvider } from "protoculture";
 import * as Hapi from "hapi";
