@@ -2149,8 +2149,8 @@ proto-list@~1.2.1:
   resolved "https://registry.yarnpkg.com/proto-list/-/proto-list-1.2.4.tgz#212d5bfe1318306a420f6402b8e26ff39647a849"
 
 protoculture-hapi@^1.0.6:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/protoculture-hapi/-/protoculture-hapi-1.0.8.tgz#81dc03407f23883c5684aba22c4c45e2da3912da"
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/protoculture-hapi/-/protoculture-hapi-1.0.10.tgz#8872bf7de51dd4eeee32d041226d9167ec582da1"
   dependencies:
     "@types/hapi" "^16.0.4"
     "@types/inert" "^4.2.0"

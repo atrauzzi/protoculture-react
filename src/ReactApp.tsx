@@ -8,13 +8,13 @@ import { ReactAppConfiguration } from "./ReactAppConfiguration";
 
 
 export class ReactApp implements App {
-    
+
     public get name() {
 
         const name = this.configuration.id
             || this.configuration.class
             || "react";
-        
+
         return _.kebabCase(name);
     }
 
@@ -24,7 +24,7 @@ export class ReactApp implements App {
     }
 
     public suite: Suite;
-    
+
     public constructor(
         protected store: Store<any>,
         protected configuration: ReactAppConfiguration<any>,
@@ -43,7 +43,7 @@ export class ReactApp implements App {
 
     protected runComponents(elements: Element[]) {
 
-        _.each(elements, (element) => this.runComponent(element))
+        _.each(elements, (element) => this.runComponent(element));
     }
 
     protected runComponent(element: Element) {
@@ -52,18 +52,18 @@ export class ReactApp implements App {
 
         const component = <Provider store={this.store}>
             <Component />
-        </Provider>
+        </Provider>;
 
         ReactDom.render(component, element);
     }
 
     protected findDomElements(): Element[] {
 
-        if(this.configuration.id) {
+        if (this.configuration.id) {
 
             return [document.getElementById(this.configuration.id)];
         }
-        else if(this.configuration.class) {
+        else if (this.configuration.class) {
 
             return Array.from(document.getElementsByClassName(this.configuration.class));
         }
