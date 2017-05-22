@@ -19,12 +19,12 @@ declare module "protoculture/lib/ServiceProvider" {
 
 ServiceProvider.prototype.bindReactApps = function (reactAppConfigurations: ReactAppConfiguration<any>[]) {
 
-    _.each(reactAppConfigurations, (reactAppConfiguration) => 
+    _.each(reactAppConfigurations, (reactAppConfiguration) =>
         this.bindReactApp(reactAppConfiguration));
 };
 
 ServiceProvider.prototype.bindReactApp = function (reactAppConfiguration: ReactAppConfiguration<any>) {
- 
+
     this.suite.container
         .bind(appSymbols.App)
         .toDynamicValue((context: interfaces.Context) => {
