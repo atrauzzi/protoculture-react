@@ -51,8 +51,6 @@ class ReactDemoWebAppServiceProvider extends ServiceProvider {
             id: "demo",
             component: ReactDemoComponent,
         });
-
-        super.boot();
     }
 }
 
