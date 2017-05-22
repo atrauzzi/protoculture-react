@@ -13,6 +13,7 @@
         "removeComments": true,
         "noLib": false,
         "preserveConstEnums": true,
+        "array-type": [true, "array"],
         "suppressImplicitAnyIndexErrors": true,
         "sourceMap": true,
         "outDir": "lib",
