@@ -8,7 +8,25 @@ export class ReactServiceProvider extends ServiceProvider {
 
     public async boot() {
 
+        this.suite.container.bind(reduxSymbols.InitialState)
+            .to(this.findInitialState())
+            .inSingletonScope();
+
         this.suite.container.rebind(reduxSymbols.Compose)
             .toConstantValue(window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose);
+    }
+
+    protected findInitialState() {
+
+        const element = document.getElementsByName("state")[0];
+
+        try {
+
+            return JSON.parse(element.nodeValue);
+        }
+        catch (error) {
+
+            return null;
+        }
     }
 }
