@@ -11,21 +11,21 @@ declare module "protoculture/lib/ServiceProvider" {
 
     export interface ServiceProvider {
 
-        bindReactApps(reactAppConfigurations: ReactAppConfiguration<any>[]): void;
+        configureReactApps(reactAppConfigurations: ReactAppConfiguration<any>[]): void;
 
-        bindReactApp(reactAppConfiguration: ReactAppConfiguration<any>): void;
+        configureReactApp(reactAppConfiguration: ReactAppConfiguration<any>): void;
     }
 }
 
-ServiceProvider.prototype.bindReactApps = function (reactAppConfigurations: ReactAppConfiguration<any>[]) {
+ServiceProvider.prototype.configureReactApps = function (reactAppConfigurations: ReactAppConfiguration<any>[]) {
 
     _.each(reactAppConfigurations, (reactAppConfiguration) =>
-        this.bindReactApp(reactAppConfiguration));
+        this.configureReactApp(reactAppConfiguration));
 };
 
-ServiceProvider.prototype.bindReactApp = function (reactAppConfiguration: ReactAppConfiguration<any>) {
+ServiceProvider.prototype.configureReactApp = function (reactAppConfiguration: ReactAppConfiguration<any>) {
 
-    this.suite.container
+    this.bundle.container
         .bind(appSymbols.App)
         .toDynamicValue((context: interfaces.Context) => {
 

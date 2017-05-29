@@ -1,8 +1,10 @@
 #!/usr/bin/env ts-node
 import * as Hapi from "hapi";
-import { ServiceProvider, StaticServiceProvider, BaseApp, Suite, ConsoleServiceProvider } from "protoculture";
+import { ServiceProvider, StaticServiceProvider, BaseApp, Bundle, ConsoleServiceProvider } from "protoculture";
 import { InertServiceProvider, HapiServiceProvider, Route, RouteType } from "protoculture-hapi";
 
+
+// tslint:disable:max-classes-per-file
 
 //
 // Note: If you're interested in what's going on here, I suggest checking out https://github.com/atrauzzi/protoculture-hapi
@@ -13,7 +15,7 @@ const reactDemoServerSymbols = {
 };
 
 export class HelloController {
-    
+
     public async sayHello(request: Hapi.Request, reply: Hapi.Base_Reply, route: Route) {
 
         reply("Yes sir I like it!");
@@ -24,7 +26,7 @@ class ReactDemoServerServiceProvider extends ServiceProvider {
 
     public async boot() {
 
-        this.configureConnection(() => { 
+        this.configureConnection(() => {
 
             return {
                 host: "0.0.0.0",
@@ -47,7 +49,7 @@ class ReactDemoServerServiceProvider extends ServiceProvider {
     }
 }
 
-class HapiDemoSuite extends Suite {
+class HapiDemoSuite extends Bundle {
 
     public name = "react-demo-server";
 

@@ -1,7 +1,7 @@
 import * as _ from "lodash";
 import * as React from "react";
 import * as ReactDom from "react-dom";
-import { App, Suite, domReady } from "protoculture";
+import { App, Bundle, domReady } from "protoculture";
 import { Store } from "redux";
 import { Provider } from "react-redux";
 import { ReactAppConfiguration } from "./ReactAppConfiguration";
@@ -23,7 +23,7 @@ export class ReactApp implements App {
         return true;
     }
 
-    public suite: Suite;
+    public bundle: Bundle;
 
     public constructor(
         protected store: Store<any>,

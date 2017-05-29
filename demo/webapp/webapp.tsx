@@ -1,14 +1,16 @@
 import * as React from "react";
 import { ReactServiceProvider, ReactAppConfiguration } from "../../src/index";
-import { ServiceProvider, StaticServiceProvider, BaseApp, Suite, WebServiceProvider } from "protoculture";
+import { ServiceProvider, StaticServiceProvider, BaseApp, Bundle, WebServiceProvider } from "protoculture";
 import * as Hapi from "hapi";
 
+
+// tslint:disable:max-classes-per-file
 
 class ReactDemoComponent extends React.Component<any, any> {
 
     public state = {
         count: 0,
-    }
+    };
 
     public render() {
 
@@ -32,7 +34,7 @@ class ReactDemoComponent extends React.Component<any, any> {
                     ? <p>There, now wasn't that satisfying?</p>
                     : null
             }
-        </div>
+        </div>;
     }
 
     protected increment() {
@@ -46,8 +48,8 @@ class ReactDemoComponent extends React.Component<any, any> {
 class ReactDemoWebAppServiceProvider extends ServiceProvider {
 
     public async boot() {
-        
-        this.bindReactApp({
+
+        this.configureReactApp({
             id: "demo",
             component: ReactDemoComponent,
         });
@@ -56,7 +58,7 @@ class ReactDemoWebAppServiceProvider extends ServiceProvider {
 
 //
 // Here's a suite that acts as the composition root for the entire solution.
-class ReactDemoWebAppSuite extends Suite {
+class ReactDemoWebAppSuite extends Bundle {
 
     public name = "react-demo";
 
