@@ -1,8 +1,7 @@
-import { reduxSymbols, ServiceProvider } from "protoculture";
+import "./ServiceProvider";
 import { compose } from "redux";
+import { reduxSymbols, ServiceProvider } from "protoculture";
 
-
-declare const window: any;
 
 export class ReactServiceProvider extends ServiceProvider {
 

@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 import { ReactAppConfiguration } from "./ReactAppConfiguration";
 
 
-export class ReactApp implements App {
+export class ProtocultureReactApp implements App {
 
     public get name() {
 
@@ -29,7 +29,6 @@ export class ReactApp implements App {
         protected store: Store<any>,
         protected configuration: ReactAppConfiguration<any>,
     ) {
-
     }
 
     public async run() {
@@ -57,7 +56,7 @@ export class ReactApp implements App {
         ReactDom.render(component, element);
     }
 
-    protected findDomElements(): Element[] {
+    protected findDomElements() {
 
         if (this.configuration.id) {
 

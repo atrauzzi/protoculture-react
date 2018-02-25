@@ -1,9 +1,9 @@
 import * as _ from "lodash";
 import { interfaces } from "inversify";
-import { ReactAppConfiguration } from "./index";
 import { appSymbols, reduxSymbols } from "protoculture";
+import { ReactAppConfiguration } from "../../index";
 import { Store } from "redux";
-import { ReactApp } from "./ReactApp";
+import { ProtocultureReactApp } from "./ProtocultureReactApp";
 import { ServiceProvider } from "protoculture/lib/ServiceProvider";
 
 
@@ -11,9 +11,8 @@ declare module "protoculture/lib/ServiceProvider" {
 
     export interface ServiceProvider {
 
-        configureReactApps(reactAppConfigurations: ReactAppConfiguration<any>[]): void;
-
         configureReactApp(reactAppConfiguration: ReactAppConfiguration<any>): void;
+        configureReactApps(reactAppConfigurations: ReactAppConfiguration<any>[]): void;
     }
 }
 
@@ -31,6 +30,6 @@ ServiceProvider.prototype.configureReactApp = function (reactAppConfiguration: R
 
             const store = context.container.get<Store<any>>(reduxSymbols.Store);
 
-            return new ReactApp(store, reactAppConfiguration);
+            return new ProtocultureReactApp(store, reactAppConfiguration);
         });
 };
