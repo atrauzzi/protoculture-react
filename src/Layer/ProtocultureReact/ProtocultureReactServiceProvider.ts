@@ -8,6 +8,6 @@ export class ReactServiceProvider extends ServiceProvider {
     public async boot() {
 
         this.bundle.container.rebind(reduxSymbols.Compose)
-            .toConstantValue(window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose);
+            .toConstantValue((window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose);
     }
 }

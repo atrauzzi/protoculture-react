@@ -1,3 +1,4 @@
+import "protoculture/lib/Shims";
 import * as React from "react";
 import { ReactServiceProvider, ReactAppConfiguration } from "../../src/index";
 import { ServiceProvider, StaticServiceProvider, BaseApp, Bundle, WebServiceProvider } from "protoculture";

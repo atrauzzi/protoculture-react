@@ -1,4 +1,5 @@
 #!/usr/bin/env ts-node
+import "protoculture/lib/Shims";
 import * as Hapi from "hapi";
 import { ServiceProvider, StaticServiceProvider, BaseApp, Bundle, ConsoleServiceProvider } from "protoculture";
 import { InertServiceProvider, HapiServiceProvider, Route, RouteType } from "protoculture-hapi";
